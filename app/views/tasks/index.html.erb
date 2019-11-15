@@ -1,0 +1,6 @@
+<%= form_with model: @task, local: true, class: "form" do |f| %>
+  <%= f.text_field :title %>
+  <%= f.submit "Create" %>
+<% end %>
+
+<%= render @tasks %>
