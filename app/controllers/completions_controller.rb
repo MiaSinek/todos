@@ -1,6 +1,6 @@
 class CompletionsController < ApplicationController
   def create
-    task.touch :completed_at
+    task.complete!
     redirect_to root_path
   end
 
