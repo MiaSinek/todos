@@ -4,9 +4,8 @@ feature "user creates task" do
   scenario "successfully" do
     sign_in
 
-    fill_in "task[title]", with: "Buy a cat"
-    click_on "Create"
+    create_task "Buy a cat"
 
-    expect(page).to have_css 'li.task', text: 'Buy a cat'
+    expect(page).to display_task("Buy a cat")
   end
 end

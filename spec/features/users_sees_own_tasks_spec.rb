@@ -6,6 +6,6 @@ feature "User sees onw task" do
 
     sign_in_as "someone@abc.com"
 
-    expect(page).not_to have_css 'li.task', text: 'Buy a cat'
+    expect(page).not_to display_task("Buy a cat")
   end
 end

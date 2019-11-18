@@ -4,10 +4,10 @@ feature "User completes task" do
   scenario "successfully" do
     sign_in
 
-    fill_in "task[title]", with: "Buy a cat"
-    click_on "Create"
+    create_task "Buy a cat"
+
     click_on "Done"
 
-    expect(page).to have_css 'li.task.completed', text: 'Buy a cat'
+    expect(page).to display_completed_task("Buy a cat")
   end
 end

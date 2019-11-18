@@ -1,6 +1,12 @@
 class CompletionsController < ApplicationController
   def create
-    current_user.tasks.find(params[:task_id]).touch :completed_at
+    task.touch :completed_at
     redirect_to root_path
+  end
+
+  private
+
+  def task
+    current_user.tasks.find(params[:task_id])
   end
 end
