@@ -3,12 +3,11 @@ class TasksController < ApplicationController
 
   def index
     @task = Task.new
-    @tasks = Task.where email: current_email
+    @tasks = current_user.tasks
   end
 
   def create
-    Task.create task_params.merge(email: current_email)
-
+    current_user.tasks.create(task_params)
     redirect_to root_path
   end
 
