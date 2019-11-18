@@ -1,1 +1,5 @@
-<li class="task <%= 'completed' if task.completed? %>"><%= task.title %> | <%= button_to "Done", task_completion_path(task) %></li>
+<li class="task <%= 'completed' if task.completed? %>">
+  <%= task.title %>
+| <%= button_to "Done", task_completion_path(task) %>
+  <%= button_to "Incomplete", task_completion_path(task), method: :delete %>
+</li>

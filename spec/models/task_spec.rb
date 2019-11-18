@@ -23,3 +23,14 @@ describe Task, "#complete!" do
     expect(task).to be_completed
   end
 end
+
+describe Task, "#incomplete!" do
+  it "sets completed_at to nil" do
+    task = Task.create(completed_at: nil)
+    task.complete!
+    task.incomplete!
+    task.reload
+
+    expect(task).not_to be_completed
+  end
+end
