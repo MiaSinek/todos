@@ -33,6 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # BDD for rails
   gem 'rspec-rails', '~> 3.9'
+  gem 'pry'
 end
 
 group :test do

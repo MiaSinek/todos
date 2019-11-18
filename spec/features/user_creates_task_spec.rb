@@ -2,7 +2,8 @@ require "rails_helper"
 
 feature "user creates task" do
   scenario "successfully" do
-    visit root_path
+    sign_in
+
     fill_in "task[title]", with: "Buy a cat"
     click_on "Create"
 
